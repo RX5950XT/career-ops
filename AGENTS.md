@@ -78,7 +78,7 @@ If yes → `node update-system.mjs apply --confirm`. If no → `node update-syst
 
 ## What is career-ops
 
-AI-powered, CLI-agnostic job search automation: pipeline tracking, offer evaluation, CV generation, portal scanning, batch processing. Runs on any AI coding CLI following the [open agent skill standard](https://agentskills.io) (Claude Code, Cursor, Codex, OpenCode, Qwen, Copilot, Kimi, Antigravity CLI, Grok Build CLI). Legacy Gemini API evaluation remains via `gemini-eval.mjs`.
+AI-powered, CLI-agnostic job search automation: pipeline tracking, offer evaluation, CV generation, portal scanning, batch processing. Runs on any AI coding CLI following the [open agent skill standard](https://agentskills.io) (Claude Code, Cursor, Codex, OpenCode, Qwen, Copilot, Kimi, Antigravity CLI, Grok Build CLI, Hermes Agent). Legacy Gemini API evaluation remains via `gemini-eval.mjs`.
 
 ### Codex invocation
 
@@ -383,6 +383,7 @@ Headless worker command per CLI:
 | Qwen | `qwen -p "prompt"` |
 | Antigravity CLI | `agy -p "prompt"` |
 | Grok Build CLI | `grok -p "prompt"` |
+| Hermes Agent | `hermes chat -q "prompt"` |
 
 **Parallel fan-outs — reserve report numbers first.** Before spawning N parallel evaluators, reserve the range: `node reserve-report-num.mjs --count N` (prints e.g. `042-049`); hand each worker its own number. The allocator treats report files, sentinels, tracker row IDs, and tracker report links as occupied; each slot claim is individually atomic (on collision, claimed slots are released and the reservation restarts past it — permanent, harmless gaps). Release with `node reserve-report-num.mjs --release 042-049` when done; stale sentinels are GC'd after 4h, so reserve right before spawning. Never let parallel workers compute `max+1` themselves — that is the #749 race.
 

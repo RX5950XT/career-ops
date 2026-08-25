@@ -71,6 +71,7 @@
   <img src="https://img.shields.io/badge/Kimi-FF4B4B?style=flat" alt="Kimi">
   <img src="https://img.shields.io/badge/GitHub_Copilot-000?style=flat&logo=githubcopilot&logoColor=white" alt="GitHub Copilot">
   <img src="https://img.shields.io/badge/Grok_Build_CLI-000?style=flat&logo=x&logoColor=white" alt="Grok Build CLI">
+  <img src="https://img.shields.io/badge/Hermes_Agent-6B21A8?style=flat" alt="Hermes Agent">
   <br>
   <img src="https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white" alt="Node.js">
   <img src="https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white" alt="Go">
@@ -143,7 +144,7 @@ This clones the latest release into `./career-ops` and installs dependencies. Th
 
 ```bash
 cd career-ops
-claude   # or codex / qwen / opencode / agy / grok — open your AI CLI here
+claude   # or hermes / codex / qwen / opencode / agy / grok — open your AI CLI here
 ```
 
 **On first launch, career-ops walks you through setup — your CV, profile and target roles — just by chatting. Nothing to edit by hand.**
@@ -277,6 +278,19 @@ grok
 ```
 
 For headless batch workers, use `grok -p "prompt"` (add `--yolo` to auto-approve tool executions).
+
+## Hermes Agent Integration
+
+career-ops supports [Hermes Agent](https://hermes-agent.nousresearch.com/docs) natively. `AGENTS.md` is the shared rulebook; `HERMES.md` is the thin Hermes wrapper. There is no guaranteed `/career-ops` slash — ask for the mode by name, the same way Codex works.
+
+This fork is wired for the **Taiwan** market: `modes/zh-TW`, Yourator + 數字人力銀行 (yes123) scanners, and paste-URL evaluation for 104 / 1111 / Cake (those boards have no public zero-auth API, or sit behind Cloudflare). Copy `templates/portals.taiwan.yml` to `portals.yml`.
+
+```bash
+cd career-ops
+hermes
+# or headless:
+hermes chat -q "Run the career-ops scan mode and summarize new matches."
+```
 
 ### Standalone Gemini API Script (No CLI install needed)
 

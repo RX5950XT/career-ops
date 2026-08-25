@@ -69,6 +69,7 @@ export const KNOWN: CliSpec[] = [
   // latter. Plain `-p` streams text, which is what every other non-Claude entry
   // here does.
   { id: "grok", name: "Grok Build CLI", bin: "grok", run: "grok -p", url: "https://docs.x.ai/build/overview", args: (p) => ["-p", p] },
+  { id: "hermes", name: "Hermes Agent", bin: "hermes", run: "hermes chat -q", url: "https://hermes-agent.nousresearch.com/docs", args: (p) => ["chat", "-q", p] },
 ];
 
 function searchDirs(): string[] {

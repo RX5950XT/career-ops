@@ -51,3 +51,30 @@ Merged before the policy was written, and logged here because it is the case tha
 **Rule 3, retroactively.** Two coverage defects were found and fixed after listing, both by contributors reading the live feed rather than the code: the page size was set to 100 while the feed serves 50, so the fetch stopped silently after one page ([#2419](https://github.com/santifer/career-ops/pull/2419)), and a single transient upstream failure aborted the whole board fetch ([#2506](https://github.com/santifer/career-ops/issues/2506)). Both are the failure mode rule 3 targets: partial coverage that reads as complete.
 
 **Rule 4.** Listed with its operator declared. Rule 4's 40% ceiling exists so no single source, however large, dominates the registry.
+
+---
+
+## yes123.com.tw（數字人力銀行）
+
+| | |
+|---|---|
+| **Proposed by** | RX5950XT / Hermes Agent (community contributor, not affiliated with the source) |
+| **Provider** | `providers/yes123.mjs` |
+| **PR** | this fork (`RX5950XT/career-ops`) |
+| **Merged** | 2026-08-25 |
+| **Status** | Listed (fork) |
+
+**Rule 1 (real listings, identifiable employer, free for candidates).** Verified 2026-08-25: listing cards name the employer via `comp_info.asp`, posting pages are free to read, no candidate-side paywall on `/wk_index/`.
+
+**Rule 2 (canonical URL).** Emitted URL is the board posting `https://www.yes123.com.tw/wk_index/job.asp?p_id=…&job_id=…`. The listing does not expose an employer ATS link, so the board page is the shortest verifiable path.
+
+**Rule 3 (complete inventory, no paid placement).** The board has no public unfiltered dump. The provider walks every `strrec` page of each configured keyword (profile `target_roles` by default) until a page adds nothing new. Ranking stays on the user's machine. Promoted/sticky rows, if any, are deduped by job URL.
+
+**Rule 4 (operator declared).** Operator: 數字科技股份有限公司. Contributor is not affiliated.
+
+**Rule 5 (aggregation stays in core).** Provider reads yes123 only.
+
+**Also checked:** `robots.txt` (2026-08-25) allows `/wk_index/` and disallows `/commonAPI/`, `/WEBAPI/`, `/admin/CoreAPI/`. Provider never requests the disallowed paths. A first page that still contains `job.asp?p_id=` but parses to nothing throws.
+
+**Not listed (same market, failed the bar):** 104.com.tw and cake.me keyword search pages answer Cloudflare bot-management challenges on unauthenticated fetches (same class as retired EchoJobs). 1111.com.tw search is a client-rendered SPA with no public zero-auth list API. Those stay paste-URL / auto-pipeline, not scanners.
+

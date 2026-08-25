@@ -1578,6 +1578,8 @@ const systemFiles = [
   '.antigravitycli/skills/career-ops/SKILL.md',
   '.grok/skills/career-ops/SKILL.md',
   '.kimi/skills/career-ops/SKILL.md',
+  '.hermes/skills/career-ops/SKILL.md',
+  'HERMES.md',
 ];
 
 for (const f of systemFiles) {
@@ -1621,7 +1623,8 @@ if (!canonicalEntry) {
   fail(`Could not read git index entry for the canonical entrypoint ${CANONICAL_ENTRYPOINT}`);
 }
 
-const skillEntrypoints = systemFiles.filter((f) => f.endsWith('/skills/career-ops/SKILL.md'));
+// Hermes ships a Taiwan/CLI-specific skill, not a pointer to the shared router.
+const skillEntrypoints = systemFiles.filter((f) => f.endsWith('/skills/career-ops/SKILL.md') && !f.startsWith('.hermes/'));
 for (const f of skillEntrypoints) {
   const staged = stagedBlob(f);
   if (!staged) {

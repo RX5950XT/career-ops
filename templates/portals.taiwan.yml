@@ -1,0 +1,55 @@
+# Taiwan job boards — copy to portals.yml
+#
+#   cp templates/portals.taiwan.yml portals.yml
+#
+# Scan-able sources only. 104 / 1111 / Cake search pages are Cloudflare-gated
+# or have no public zero-auth API; paste those URLs into the agent instead.
+
+title_filter:
+  positive:
+    - 軟體
+    - 工程師
+    - Engineer
+    - Developer
+    - Python
+    - backend
+    - 後端
+  negative:
+    - 實習
+    - intern
+    - 工讀
+    - 兼職
+
+location_filter:
+  positive:
+    - 台北
+    - 臺北
+    - 新北
+    - 台中
+    - 臺中
+    - 台南
+    - 高雄
+    - 遠端
+    - Remote
+    - Taiwan
+    - 台灣
+    - 臺灣
+
+job_boards:
+  - name: Yourator（台灣新創）
+    provider: yourator
+    careers_url: https://www.yourator.co/jobs
+    enabled: true
+    notes: "公開 api/v4/jobs，掃完整看板。新創／數位職缺。"
+
+  - name: 數字人力銀行（yes123）
+    provider: yes123
+    careers_url: https://www.yes123.com.tw/wk_index/joblist.asp
+    enabled: true
+    max_pages: 5
+    yes123:
+      # 留空則改讀 config/profile.yml 的 target_roles
+      keywords: []
+    notes: "公開 /wk_index/ 列表頁。不碰 robots 禁止的 API。"
+
+tracked_companies: []

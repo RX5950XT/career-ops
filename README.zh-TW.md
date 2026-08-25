@@ -114,7 +114,7 @@ npx @santifer/career-ops init
 
 ```bash
 cd career-ops
-claude   # 或 gemini / codex / qwen / opencode — 在此開啟你的 AI CLI
+claude   # 或 hermes / gemini / codex / qwen / opencode — 在此開啟你的 AI CLI
 ```
 
 **首次啟動時，career-ops 會透過對話帶你完成設定 — 你的履歷、個人檔案與目標職位 — 完全不需要手動編輯。**

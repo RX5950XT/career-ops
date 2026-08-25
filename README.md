@@ -281,9 +281,9 @@ For headless batch workers, use `grok -p "prompt"` (add `--yolo` to auto-approve
 
 ## Hermes Agent Integration
 
-career-ops supports [Hermes Agent](https://hermes-agent.nousresearch.com/docs) natively. `AGENTS.md` is the shared rulebook; `HERMES.md` is the thin Hermes wrapper. There is no guaranteed `/career-ops` slash — ask for the mode by name, the same way Codex works.
+career-ops supports [Hermes Agent](https://hermes-agent.nousresearch.com/docs) natively. `AGENTS.md` is the shared rulebook (same as Grok). There is no guaranteed `/career-ops` slash — ask for the mode by name, the same way Codex works.
 
-This fork is wired for the **Taiwan** market: `modes/zh-TW`, Yourator + 數字人力銀行 (yes123) scanners, and paste-URL evaluation for 104 / 1111 / Cake (those boards have no public zero-auth API, or sit behind Cloudflare). Copy `templates/portals.taiwan.yml` to `portals.yml`.
+This fork is wired for the **Taiwan** market: `modes/zh-TW`. Scanners: Yourator, 數字人力銀行 (yes123), 518熊班, 台灣就業通 (勞動部公開 API). 104 / 1111 / Cake search pages sit behind Cloudflare — paste those URLs into the agent. Copy `templates/portals.taiwan.yml` to `portals.yml`.
 
 ```bash
 cd career-ops

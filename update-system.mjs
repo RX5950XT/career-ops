@@ -302,7 +302,6 @@ const SYSTEM_PATHS = [
   '.grok/skills/',
   '.kimi/skills/',
   '.hermes/skills/',
-  'HERMES.md',
   'docs/',
   'writing-samples/README.md',
   'VERSION',

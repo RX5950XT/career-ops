@@ -1579,7 +1579,6 @@ const systemFiles = [
   '.grok/skills/career-ops/SKILL.md',
   '.kimi/skills/career-ops/SKILL.md',
   '.hermes/skills/career-ops/SKILL.md',
-  'HERMES.md',
 ];
 
 for (const f of systemFiles) {

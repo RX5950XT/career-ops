@@ -20,8 +20,8 @@ metadata:
 ## 台灣鐵律
 
 1. **輸出繁中。** `config/profile.yml` 設 `language.output: zh-TW`、`language.modes_dir: modes/zh-TW`。
-2. **可自動掃：** Yourator、數字人力銀行（yes123）。
-3. **不可自動掃：** 104、1111、Cake 搜尋頁。它們有 Cloudflare 或沒有公開零認證 API。career-ops 不繞過 bot protection。主人貼 URL／JD → auto-pipeline。
+2. **可自動掃：** Yourator、數字人力銀行（yes123）、518熊班、台灣就業通（勞動部公開 API）。
+3. **不可自動掃：** 104、1111、Cake 搜尋頁。Cloudflare 擋未登入掃描。貼 URL／JD → auto-pipeline。不繞過 bot protection。
 4. **絕不送出應徵。** 只評估、產履歷、寫草稿。
 5. **關鍵字只重述、不捏造。** 事實只來自 `cv.md`、`config/profile.yml`、`modes/_profile.md`、當下對話。
 
@@ -73,8 +73,10 @@ cp templates/portals.taiwan.yml portals.yml
 ## 來源怎麼用
 
 - **yes123（數字人力銀行）** — `provider: yes123`。關鍵字來自 `yes123.keywords` 或 `config/profile.yml` 的 `target_roles`。
+- **518熊班** — `provider: job518`。公開 HTML 列表。
+- **台灣就業通** — `provider: taiwanjobs`。勞動部 `free.taiwanjobs.gov.tw` Webservice，用 3 碼郵遞區號。
 - **Yourator** — `provider: yourator`。公開 `api/v4/jobs`，掃完整看板。
-- **104 / 1111 / Cake** — 請主人貼職缺網址或內文。用 `web_extract` 或瀏覽器開單一頁拿 JD，再評估。不要寫掃描器去撞 Cloudflare。
+- **104 / 1111 / Cake** — 請主人貼職缺網址或內文。不要寫掃描器去撞 Cloudflare。
 
 ## 禁止
 

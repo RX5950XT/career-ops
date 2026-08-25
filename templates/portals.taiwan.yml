@@ -52,4 +52,21 @@ job_boards:
       keywords: []
     notes: "公開 /wk_index/ 列表頁。不碰 robots 禁止的 API。"
 
+  - name: 518熊班
+    provider: job518
+    careers_url: https://www.518.com.tw/job-index.html
+    enabled: true
+    max_pages: 5
+    job518:
+      keywords: []
+    notes: "公開 HTML 列表。關鍵字空則讀 profile.yml target_roles。"
+
+  - name: 台灣就業通（勞動部）
+    provider: taiwanjobs
+    careers_url: https://www.taiwanjobs.gov.tw/
+    enabled: true
+    taiwanjobs:
+      zips: ["100", "105", "110", "114", "220", "231", "330", "300", "400", "700", "800"]
+    notes: "勞動部公開 Webservice，每郵遞區號最多 1000 筆。"
+
 tracked_companies: []

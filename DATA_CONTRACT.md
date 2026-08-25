@@ -162,7 +162,6 @@ These files contain system logic, scripts, templates, and instructions that impr
 | `.antigravitycli/skills/*` | Skill definitions (Antigravity CLI) |
 | `.grok/skills/*` | Skill definitions (Grok Build CLI) |
 | `.hermes/skills/*` | Skill definitions (Hermes Agent) |
-| `HERMES.md` | Hermes Agent project rules (thin wrapper over AGENTS.md) |
 | `docs/*` | Documentation |
 | `VERSION` | Current version number |
 | `DATA_CONTRACT.md` | This file |

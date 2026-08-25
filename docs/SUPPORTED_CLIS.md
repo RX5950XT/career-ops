@@ -10,7 +10,7 @@ Career-ops is AI-agnostic and runs on several command-line agent tools. The core
 | OpenCode | `OPENCODE.md` | Interactive: `opencode` (then `/career-ops`). Headless/Batch: `opencode run "prompt"` |
 | Antigravity CLI | `AGENTS.md` | Interactive: `agy` (then `/career-ops`). Headless/Batch: `agy -p "prompt"` |
 | Grok Build CLI | `AGENTS.md` | Interactive: `grok` (then `/career-ops`). Headless/Batch: `grok -p "prompt"` |
-| Hermes Agent | `HERMES.md` | Interactive: `hermes` (then ask for a mode by name). Headless/Batch: `hermes chat -q "prompt"` |
+| Hermes Agent | `AGENTS.md` | Interactive: `hermes` (ask for a mode by name). Headless/Batch: `hermes chat -q "prompt"` |
 | Qwen | `AGENTS.md` | Interactive: `qwen`. Headless/Batch: `qwen -p "prompt"` |
 | Kimi | `KIMI.md` | Interactive: `kimi` |
 | GitHub Copilot CLI | `AGENTS.md` | Headless/Batch: `copilot -p "prompt"` |
